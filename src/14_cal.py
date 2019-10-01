@@ -22,3 +22,19 @@ and does the following:
 import sys
 import calendar
 from datetime import datetime
+
+args = sys.argv
+currentTime = datetime.today()
+
+if len(args) == 1:
+    print(calendar.month(currentTime.year, currentTime.month))
+    print(sys.argv)
+elif len(args) == 2:
+    print(calendar.month(currentTime.year, int(args[1])))
+    print(sys.argv)
+elif len(args) == 3:
+    print(calendar.month(int(args[2]), int(args[1])))
+    print(sys.argv)
+else:
+    print("maxim 2 parameters")
+sys.exit()
